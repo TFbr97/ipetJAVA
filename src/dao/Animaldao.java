@@ -75,7 +75,7 @@ public class Animaldao {
             
             else{
                 
-                JOptionPane.showMessageDialog(null, "Animal nçao encontrado");
+                JOptionPane.showMessageDialog(null, "Animal nâo encontrado");
                 
             }
             
