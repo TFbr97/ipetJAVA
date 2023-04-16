@@ -35,6 +35,7 @@ public class FrMenu extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         cranimal = new javax.swing.JMenuItem();
+        crcliente = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -75,6 +76,14 @@ public class FrMenu extends javax.swing.JFrame {
         });
         jMenu1.add(cranimal);
 
+        crcliente.setText("Cadastro de Cliente");
+        crcliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crclienteActionPerformed(evt);
+            }
+        });
+        jMenu1.add(crcliente);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Relatorio");
@@ -99,6 +108,11 @@ public class FrMenu extends javax.swing.JFrame {
     private void cranimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cranimalActionPerformed
         new FrAnimal().setVisible(true);
     }//GEN-LAST:event_cranimalActionPerformed
+
+    private void crclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crclienteActionPerformed
+        // TODO add your handling code here:
+        new FrCliente().setVisible(true);
+    }//GEN-LAST:event_crclienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,6 +151,7 @@ public class FrMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cranimal;
+    private javax.swing.JMenuItem crcliente;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;

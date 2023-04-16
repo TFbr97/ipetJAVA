@@ -81,7 +81,6 @@ public class FrAnimal extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Id Animal:");
 
-        btidanimal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/images_1.jpg"))); // NOI18N
         btidanimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btidanimalActionPerformed(evt);
@@ -97,7 +96,6 @@ public class FrAnimal extends javax.swing.JFrame {
             }
         });
 
-        btnome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/images_1.jpg"))); // NOI18N
         btnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnomeActionPerformed(evt);
@@ -113,7 +111,6 @@ public class FrAnimal extends javax.swing.JFrame {
 
         btsalvar.setBackground(new java.awt.Color(0, 204, 51));
         btsalvar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btsalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Gnome-Media-Floppy-32.png"))); // NOI18N
         btsalvar.setText("SALVAR");
         btsalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +120,6 @@ public class FrAnimal extends javax.swing.JFrame {
 
         tblimpar.setBackground(new java.awt.Color(255, 255, 0));
         tblimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        tblimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Gnome-Edit-Clear-32.png"))); // NOI18N
         tblimpar.setText("LIMPAR");
         tblimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -190,7 +186,7 @@ public class FrAnimal extends javax.swing.JFrame {
                         .addComponent(btsalvar)
                         .addGap(40, 40, 40)
                         .addComponent(tblimpar)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,10 +197,11 @@ public class FrAnimal extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel3)
                         .addComponent(txnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2)
-                        .addComponent(txidanimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btidanimal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(btidanimal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(txidanimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnome))
                 .addGap(46, 46, 46)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
