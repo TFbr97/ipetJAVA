@@ -15,6 +15,9 @@ public class Animal {
     private String sexo;
     private String raca;
     private String status;
+    private String descricao;
+
+    
 
     public Animal() {
     }
@@ -65,6 +68,14 @@ public class Animal {
     
     public void setStatus(String status){
         this.status = status;
+    }
+    
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
     
     

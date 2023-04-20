@@ -32,13 +32,14 @@ public class Animaldao {
         
         try{
             PreparedStatement stmt = con.prepareStatement
-        ("insert into animal(nome,idade,sexo,raca,status)values(?,?,?,?,?)");
+        ("insert into animal(nome,idade,sexo,raca,status,descricao)values(?,?,?,?,?,?)");
             
             stmt.setString(1, animal.getNome());
             stmt.setString(2, animal.getIdade());
             stmt.setString(3, animal.getSexo());
             stmt.setString(4, animal.getRaca());
             stmt.setString(5, animal.getStatus());
+            stmt.setString(6, animal.getDescricao());
             stmt.execute();
             JOptionPane.showMessageDialog(null, "Animal cadastrado no sistema");
             
@@ -68,6 +69,7 @@ public class Animaldao {
                 animal.setIdade(rs.getString("idade"));
                 animal.setSexo(rs.getString("sexo"));
                 animal.setRaca(rs.getString("raca"));
+                animal.setDescricao(rs.getString("descricao"));
                 
                 
                 
@@ -103,6 +105,7 @@ public class Animaldao {
                 animal.setIdade(rs.getString("idade"));
                 animal.setSexo(rs.getString("sexo"));
                 animal.setRaca(rs.getString("raca"));
+                animal.setDescricao(rs.getString("descricao"));
                 
                 
                 

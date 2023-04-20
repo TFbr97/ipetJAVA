@@ -124,7 +124,7 @@ public class FrCliente extends javax.swing.JFrame {
                 BtnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 250, 40, 40));
+        getContentPane().add(BtnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, 40, 40));
 
         BtnExcluir.setBackground(new java.awt.Color(255, 51, 0));
         BtnExcluir.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N

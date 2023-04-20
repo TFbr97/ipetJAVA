@@ -27,6 +27,7 @@ public class FrAnimal extends javax.swing.JFrame {
         animal.setIdade(txidade.getText());
         animal.setSexo(txsexo.getText());
         animal.setRaca(txraca.getText());
+        animal.setDescricao(txdescricao.getText());
         animal.setStatus("P");
         
     }
@@ -38,6 +39,7 @@ public class FrAnimal extends javax.swing.JFrame {
         txidade.setText(null);
         txsexo.setText(null);
         txraca.setText(null);
+        txdescricao.setText(null);
         
     }
     
@@ -48,6 +50,7 @@ public class FrAnimal extends javax.swing.JFrame {
         txidade.setText(animal.getIdade());
         txsexo.setText(animal.getSexo());
         txraca.setText(animal.getRaca());
+        txdescricao.setText(animal.getDescricao());
         
     }
     
@@ -56,217 +59,203 @@ public class FrAnimal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txidanimal = new javax.swing.JTextField();
-        btidanimal = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        txnome = new javax.swing.JTextField();
-        btnome = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        txidade = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
-        txsexo = new javax.swing.JTextField();
+        btbuscarid = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        txnome = new javax.swing.JTextField();
+        btbuscarnome = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        txidade = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        txsexo = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
         txraca = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txdescricao = new javax.swing.JTextArea();
+        jLabel3 = new javax.swing.JLabel();
         btsalvar = new javax.swing.JButton();
-        tblimpar = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        btlimpar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Cadastro De Animais");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Id Animal:");
-
-        btidanimal.addActionListener(new java.awt.event.ActionListener() {
+        txidanimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btidanimalActionPerformed(evt);
+                txidanimalActionPerformed(evt);
             }
         });
+        getContentPane().add(txidanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 90, 40));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Nome:");
+        btbuscarid.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btbuscarid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/pesquisar-usuario.png"))); // NOI18N
+        btbuscarid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btbuscaridActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btbuscarid, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 40, 40));
+
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Nome:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, -1));
 
         txnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txnomeActionPerformed(evt);
             }
         });
+        getContentPane().add(txnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 280, 40));
 
-        btnome.addActionListener(new java.awt.event.ActionListener() {
+        btbuscarnome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btbuscarnome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/pesquisar-usuario.png"))); // NOI18N
+        btbuscarnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnomeActionPerformed(evt);
+                btbuscarnomeActionPerformed(evt);
             }
         });
+        getContentPane().add(btbuscarnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 280, 40, 40));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel4.setText("Idade:");
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Idade:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, -1, -1));
 
-        jLabel5.setText("Sexo:");
+        txidade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txidadeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 280, 40));
 
-        jLabel6.setText("Raça");
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Sexo:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, -1, -1));
 
-        btsalvar.setBackground(new java.awt.Color(0, 204, 51));
-        btsalvar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btsalvar.setText("SALVAR");
+        txsexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txsexoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txsexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 280, 40));
+
+        jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Raça:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 530, -1, -1));
+
+        txraca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txracaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txraca, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 280, 40));
+
+        jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Descrição:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, -1, -1));
+
+        txdescricao.setColumns(20);
+        txdescricao.setRows(5);
+        jScrollPane1.setViewportView(txdescricao);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 280, 100));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("ID:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, -1, -1));
+
+        btsalvar.setBackground(new java.awt.Color(153, 255, 102));
+        btsalvar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btsalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/adicionar-usuario (1).png"))); // NOI18N
+        btsalvar.setText("Salvar");
+        btsalvar.setToolTipText("");
         btsalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btsalvarActionPerformed(evt);
             }
         });
+        getContentPane().add(btsalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 770, 160, 50));
 
-        tblimpar.setBackground(new java.awt.Color(255, 255, 0));
-        tblimpar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        tblimpar.setText("LIMPAR");
-        tblimpar.addActionListener(new java.awt.event.ActionListener() {
+        btlimpar.setBackground(new java.awt.Color(255, 255, 153));
+        btlimpar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btlimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/limpar-limpo.png"))); // NOI18N
+        btlimpar.setText("Limpar");
+        btlimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tblimparActionPerformed(evt);
+                btlimparActionPerformed(evt);
             }
         });
+        getContentPane().add(btlimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 770, 160, 50));
 
-        jPanel1.setBackground(new java.awt.Color(153, 102, 255));
+        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Agenda-PainelFundo.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, -30, 1270, 910));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setText("Cadastro do Animal");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel1)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txidanimal, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btidanimal)
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txnome, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnome))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(txidade, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txsexo, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txraca, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(btsalvar)
-                        .addGap(40, 40, 40)
-                        .addComponent(tblimpar)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(txnome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btidanimal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txidanimal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(btnome))
-                .addGap(46, 46, 46)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(txsexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(txraca, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tblimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btsalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(80, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Dogs_Funny_Bulldog_Puppy_Bokeh_571468_1920x1080.jpg"))); // NOI18N
+        jLabel8.setText("jLabel8");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-380, 0, 1850, 1010));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btidanimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btidanimalActionPerformed
-        
+    private void txidanimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txidanimalActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txidanimalActionPerformed
+
+    private void btbuscaridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscaridActionPerformed
         animal.setIdanimal(Integer.parseInt(txidanimal.getText()));
         dao.Buscaid(animal);
-        Mostradados();
-        
-    }//GEN-LAST:event_btidanimalActionPerformed
+        Mostradados();        // TODO add your handling code here:
+    }//GEN-LAST:event_btbuscaridActionPerformed
 
     private void txnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txnomeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txnomeActionPerformed
+
+    private void btbuscarnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarnomeActionPerformed
+        animal.setNome(txidanimal.getText());
+        dao.Buscanome(animal);
+        Mostradados();        // TODO add your handling code here:
+    }//GEN-LAST:event_btbuscarnomeActionPerformed
+
+    private void txidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txidadeActionPerformed
+
+    private void txsexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txsexoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txsexoActionPerformed
+
+    private void txracaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txracaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txracaActionPerformed
 
     private void btsalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsalvarActionPerformed
         
         Passadados();
         dao.insertAnimal(animal);
         Limpar();
-        
+
     }//GEN-LAST:event_btsalvarActionPerformed
 
-    private void tblimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tblimparActionPerformed
+    private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed
         
         Limpar();
-        
-    }//GEN-LAST:event_tblimparActionPerformed
-
-    private void btnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnomeActionPerformed
-        
-        animal.setNome(txnome.getText());
-        dao.Buscaid(animal);
-        Mostradados();
-        
-    }//GEN-LAST:event_btnomeActionPerformed
+    }//GEN-LAST:event_btlimparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -304,18 +293,21 @@ public class FrAnimal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btidanimal;
-    private javax.swing.JButton btnome;
+    private javax.swing.JButton btbuscarid;
+    private javax.swing.JButton btbuscarnome;
+    private javax.swing.JButton btlimpar;
     private javax.swing.JButton btsalvar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JButton tblimpar;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txdescricao;
     private javax.swing.JTextField txidade;
     private javax.swing.JTextField txidanimal;
     private javax.swing.JTextField txnome;
