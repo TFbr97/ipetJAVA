@@ -17,7 +17,7 @@ public class FrMenu extends javax.swing.JFrame {
      */
     public FrMenu() {
         initComponents();
-        
+        setExtendedState(MAXIMIZED_BOTH);
        
     }
 
@@ -36,39 +36,38 @@ public class FrMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         cranimal = new javax.swing.JMenuItem();
         crcliente = new javax.swing.JMenuItem();
+        crfuncionario = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        rlanimal = new javax.swing.JMenuItem();
+        rlfuncionario = new javax.swing.JMenuItem();
+        rladocao = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 255));
 
-        jpcapa.setBackground(new java.awt.Color(204, 204, 255));
+        jpcapa.setBackground(new java.awt.Color(200, 162, 200));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo - Copia_1.png"))); // NOI18N
-        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo_2.PNG"))); // NOI18N
+        jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel1.setFocusable(false);
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jpcapaLayout = new javax.swing.GroupLayout(jpcapa);
         jpcapa.setLayout(jpcapaLayout);
         jpcapaLayout.setHorizontalGroup(
             jpcapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpcapaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 615, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE)
         );
         jpcapaLayout.setVerticalGroup(
             jpcapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpcapaLayout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jMenu1.setText("Cadastro");
 
-        cranimal.setText("Cadastro de Animais");
+        cranimal.setText("Cadastro de Animal");
         cranimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cranimalActionPerformed(evt);
@@ -84,9 +83,42 @@ public class FrMenu extends javax.swing.JFrame {
         });
         jMenu1.add(crcliente);
 
+        crfuncionario.setText("Cadastro de Funcionario");
+        crfuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                crfuncionarioActionPerformed(evt);
+            }
+        });
+        jMenu1.add(crfuncionario);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Relatorio");
+
+        rlanimal.setText("Relatorio de Animais");
+        rlanimal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rlanimalActionPerformed(evt);
+            }
+        });
+        jMenu2.add(rlanimal);
+
+        rlfuncionario.setText("Relatorio de Funcionarios");
+        rlfuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rlfuncionarioActionPerformed(evt);
+            }
+        });
+        jMenu2.add(rlfuncionario);
+
+        rladocao.setText("Relatorio de Adoções");
+        rladocao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rladocaoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(rladocao);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -113,6 +145,29 @@ public class FrMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         new FrCliente().setVisible(true);
     }//GEN-LAST:event_crclienteActionPerformed
+
+    private void rlanimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rlanimalActionPerformed
+        
+        new RelAnimal().setVisible(true);
+        
+    }//GEN-LAST:event_rlanimalActionPerformed
+
+    private void crfuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crfuncionarioActionPerformed
+        
+        new FrFuncionario().setVisible(true);
+        
+    }//GEN-LAST:event_crfuncionarioActionPerformed
+
+    private void rlfuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rlfuncionarioActionPerformed
+        
+        new RelFuncionario().setVisible(true);
+    }//GEN-LAST:event_rlfuncionarioActionPerformed
+
+    private void rladocaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rladocaoActionPerformed
+        
+        new RelAdocao().setVisible(true);
+        
+    }//GEN-LAST:event_rladocaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,10 +207,14 @@ public class FrMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem cranimal;
     private javax.swing.JMenuItem crcliente;
+    private javax.swing.JMenuItem crfuncionario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jpcapa;
+    private javax.swing.JMenuItem rladocao;
+    private javax.swing.JMenuItem rlanimal;
+    private javax.swing.JMenuItem rlfuncionario;
     // End of variables declaration//GEN-END:variables
 }

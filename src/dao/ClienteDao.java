@@ -10,6 +10,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,7 +22,7 @@ public class ClienteDao {
     
     private Connection con;
     private ResultSet rs;
-    public Cliente cliente = new Cliente();
+   
     
     public ClienteDao(){
         this.con = new Conexao().getConnection();
@@ -47,7 +49,7 @@ public class ClienteDao {
         }
     
     }
-    public void buscaCliente(Cliente cliente){
+    public void buscaCliente(Cliente cliente){ // Referente ai idcliente
       try{
               PreparedStatement stmt = con.prepareStatement
         ("select * from cliente where idcliente = '"+cliente.getIdCliente()+"'");
@@ -70,6 +72,67 @@ public class ClienteDao {
           catch(SQLException erro){
               throw new RuntimeException(erro);
           }   
+    }
+    
+    public void buscaClienteNome(Cliente cliente){ // Referente ai nome do cliente
+      try{
+              PreparedStatement stmt = con.prepareStatement
+        ("select * from cliente where nome = '"+cliente.getNome()+"'");
+             rs = stmt.executeQuery();
+             
+             if(rs.next()){
+                 cliente.setIdCliente(rs.getInt("idcliente"));
+                 cliente.setNome(rs.getString("nome"));
+                 cliente.setCpf(rs.getString("cpf"));
+                 cliente.setTelefone(rs.getString("telefone"));
+                 cliente.setEndereco(rs.getString("endereco"));
+                 
+             }else{
+                 JOptionPane.showMessageDialog(null,"Cliente Não Existe!");
+             }
+              
+              
+              
+          }
+          catch(SQLException erro){
+              throw new RuntimeException(erro);
+          }   
+    }
+    
+    public List<Cliente> BuscaClientes(){
+        
+        try{
+            
+            List<Cliente> clientes = new ArrayList<Cliente>();
+            PreparedStatement stmt = con.prepareStatement("select * from cliente");
+            
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+              
+             Cliente cliente = new Cliente();
+                
+             cliente.setIdCliente(rs.getInt("idcliente"));
+             cliente.setNome(rs.getString("nome"));
+             cliente.setCpf(rs.getString("cpf"));
+             cliente.setTelefone(rs.getString("telefone"));
+             cliente.setEndereco(rs.getString("endereco"));
+             
+             clientes.add(cliente);
+                
+            }
+            
+            return clientes;
+                        
+        }
+        
+        catch(SQLException erro){
+            
+            throw new RuntimeException(erro);
+        }
+        
+        
+        
     }
 
 

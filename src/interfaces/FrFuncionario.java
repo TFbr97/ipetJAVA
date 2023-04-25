@@ -33,6 +33,7 @@ public class FrFuncionario extends javax.swing.JFrame {
         funcionario.setEndereco(txten.getText());
         funcionario.setUsuario(txtuser.getText());
         funcionario.setSenha(txtsenha.getText());
+        funcionario.setStatus("A");
     }
 
     public void MostraDados(){
@@ -79,7 +80,6 @@ public class FrFuncionario extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
         txtcpf = new javax.swing.JTextField();
         btnsalvar = new javax.swing.JButton();
         btnlimpar = new javax.swing.JButton();
@@ -90,7 +90,7 @@ public class FrFuncionario extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Agenda-PainelFundo.png"))); // NOI18N
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -148,7 +148,6 @@ public class FrFuncionario extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("ID");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
-        jPanel1.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 260, 50));
         jPanel1.add(txtcpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 260, 50));
 
         btnsalvar.setBackground(new java.awt.Color(153, 255, 102));
@@ -278,7 +277,6 @@ public class FrFuncionario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField txtcargo;
     private javax.swing.JTextField txtcpf;
     private javax.swing.JTextField txten;

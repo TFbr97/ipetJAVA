@@ -5,21 +5,25 @@
 package interfaces;
 
 import classe.Animal;
-import dao.Animaldao;
+import dao.AnimalDao;
 
-/**
- *
- * @author thiag
- */
+
+
+
 public class FrAnimal extends javax.swing.JFrame {
 
     Animal animal = new Animal();
-    Animaldao dao = new Animaldao();
+    AnimalDao dao = new AnimalDao();
+
     
     
     public FrAnimal() {
+        
         initComponents();
+        
     }
+    
+    
 
     public void Passadados(){
         
@@ -77,23 +81,23 @@ public class FrAnimal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btsalvar = new javax.swing.JButton();
         btlimpar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cadastro De Animais");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
         txidanimal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txidanimalActionPerformed(evt);
             }
         });
-        getContentPane().add(txidanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 200, 90, 40));
+        getContentPane().add(txidanimal, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 110, 90, 30));
 
         btbuscarid.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btbuscarid.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/pesquisar-usuario.png"))); // NOI18N
@@ -102,19 +106,19 @@ public class FrAnimal extends javax.swing.JFrame {
                 btbuscaridActionPerformed(evt);
             }
         });
-        getContentPane().add(btbuscarid, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 200, 40, 40));
+        getContentPane().add(btbuscarid, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 40, 30));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Nome:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 290, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 160, -1, -1));
 
         txnome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txnomeActionPerformed(evt);
             }
         });
-        getContentPane().add(txnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 280, 280, 40));
+        getContentPane().add(txnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 280, 30));
 
         btbuscarnome.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btbuscarnome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/pesquisar-usuario.png"))); // NOI18N
@@ -123,59 +127,59 @@ public class FrAnimal extends javax.swing.JFrame {
                 btbuscarnomeActionPerformed(evt);
             }
         });
-        getContentPane().add(btbuscarnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 280, 40, 40));
+        getContentPane().add(btbuscarnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 160, 40, 30));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Idade:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, -1, -1));
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 210, -1, -1));
 
         txidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txidadeActionPerformed(evt);
             }
         });
-        getContentPane().add(txidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 360, 280, 40));
+        getContentPane().add(txidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 280, 30));
 
         jLabel9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Sexo:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 450, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 260, -1, -1));
 
         txsexo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txsexoActionPerformed(evt);
             }
         });
-        getContentPane().add(txsexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 440, 280, 40));
+        getContentPane().add(txsexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 260, 280, 30));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Raça:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 530, -1, -1));
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
 
         txraca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txracaActionPerformed(evt);
             }
         });
-        getContentPane().add(txraca, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 520, 280, 40));
+        getContentPane().add(txraca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 280, 30));
 
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Descrição:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 640, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
 
         txdescricao.setColumns(20);
         txdescricao.setRows(5);
         jScrollPane1.setViewportView(txdescricao);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 600, 280, 100));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 280, 60));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("ID:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 210, -1, -1));
+        jLabel3.setText("IdAnimal:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, -1, -1));
 
         btsalvar.setBackground(new java.awt.Color(153, 255, 102));
         btsalvar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -187,7 +191,7 @@ public class FrAnimal extends javax.swing.JFrame {
                 btsalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(btsalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 770, 160, 50));
+        getContentPane().add(btsalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 140, 40));
 
         btlimpar.setBackground(new java.awt.Color(255, 255, 153));
         btlimpar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -198,16 +202,15 @@ public class FrAnimal extends javax.swing.JFrame {
                 btlimparActionPerformed(evt);
             }
         });
-        getContentPane().add(btlimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 770, 160, 50));
+        getContentPane().add(btlimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 140, 40));
 
-        jLabel1.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Agenda-PainelFundo.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, -30, 1270, 910));
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo_2.PNG"))); // NOI18N
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 700));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Dogs_Funny_Bulldog_Puppy_Bokeh_571468_1920x1080.jpg"))); // NOI18N
-        jLabel8.setText("jLabel8");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-380, 0, 1850, 1010));
+        jPanel1.setBackground(new java.awt.Color(200, 162, 200));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 700));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -227,7 +230,7 @@ public class FrAnimal extends javax.swing.JFrame {
     }//GEN-LAST:event_txnomeActionPerformed
 
     private void btbuscarnomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btbuscarnomeActionPerformed
-        animal.setNome(txidanimal.getText());
+        animal.setNome(txnome.getText());
         dao.Buscanome(animal);
         Mostradados();        // TODO add your handling code here:
     }//GEN-LAST:event_btbuscarnomeActionPerformed
@@ -297,15 +300,15 @@ public class FrAnimal extends javax.swing.JFrame {
     private javax.swing.JButton btbuscarnome;
     private javax.swing.JButton btlimpar;
     private javax.swing.JButton btsalvar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea txdescricao;
     private javax.swing.JTextField txidade;

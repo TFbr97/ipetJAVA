@@ -14,10 +14,12 @@ public class Adocao {
     private int idanimal;
     private int idcliente;
     private int idfuncionario;
+    private String data;
 
     public Adocao() {
+        
     }
-
+   
     public int getIdadocao() {
         return idadocao;
     }
@@ -48,6 +50,14 @@ public class Adocao {
 
     public void setIdfuncionario(int idfuncionario) {
         this.idfuncionario = idfuncionario;
+    }
+    
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
     
     

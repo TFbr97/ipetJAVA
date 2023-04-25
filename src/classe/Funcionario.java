@@ -16,6 +16,17 @@ public class Funcionario {
     private String endereco;
     private String usuario;
     private String senha;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    
 
     public int getIdfuncionario() {
         return idfuncionario;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 16/04/2023 às 13:35
+-- Tempo de geração: 22/04/2023 às 01:41
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -31,8 +31,16 @@ CREATE TABLE `adocao` (
   `idadocao` int(11) NOT NULL,
   `idanimal` int(11) NOT NULL,
   `idcliente` int(11) NOT NULL,
-  `idfuncionario` int(11) NOT NULL
+  `idfuncionario` int(11) NOT NULL,
+  `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `adocao`
+--
+
+INSERT INTO `adocao` (`idadocao`, `idanimal`, `idcliente`, `idfuncionario`, `data`) VALUES
+(4, 1, 1, 1, '2023-04-21');
 
 -- --------------------------------------------------------
 
@@ -46,15 +54,16 @@ CREATE TABLE `animal` (
   `idade` varchar(15) NOT NULL,
   `sexo` varchar(25) NOT NULL,
   `raca` varchar(25) NOT NULL,
-  `status` char(1) NOT NULL
+  `status` char(1) NOT NULL,
+  `descricao` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Despejando dados para a tabela `animal`
 --
 
-INSERT INTO `animal` (`idanimal`, `nome`, `idade`, `sexo`, `raca`, `status`) VALUES
-(1, 'Ronaldo', '2 anos', 'Masculino', 'Bulldog', 'P');
+INSERT INTO `animal` (`idanimal`, `nome`, `idade`, `sexo`, `raca`, `status`, `descricao`) VALUES
+(1, 'Ronaldo', '2 anos', 'Masculino', 'Bulldog', 'P', '');
 
 -- --------------------------------------------------------
 
@@ -66,9 +75,16 @@ CREATE TABLE `cliente` (
   `idcliente` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `cpf` varchar(15) NOT NULL,
-  `endereco` int(100) NOT NULL,
+  `endereco` varchar(100) NOT NULL,
   `telefone` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cliente`
+--
+
+INSERT INTO `cliente` (`idcliente`, `nome`, `cpf`, `endereco`, `telefone`) VALUES
+(1, 'Rodrigo', '12345678952', 'Rua taltal n° 19', '12345687988');
 
 -- --------------------------------------------------------
 
@@ -83,8 +99,17 @@ CREATE TABLE `funcionario` (
   `cpf` varchar(15) NOT NULL,
   `endereco` varchar(100) NOT NULL,
   `usuario` varchar(15) NOT NULL,
-  `senha` varchar(15) NOT NULL
+  `senha` varchar(15) NOT NULL,
+  `status` char(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `funcionario`
+--
+
+INSERT INTO `funcionario` (`idfuncionario`, `nome`, `cargo`, `cpf`, `endereco`, `usuario`, `senha`, `status`) VALUES
+(1, 'Gustavo', '', '12345678912', 'asdkljfhasfdjk', 'vasco', 'vasco', 'A'),
+(2, 'Tiago', '', '12345678912', 'rua ajsdasçdl', 'tiago', '123', 'A');
 
 --
 -- Índices para tabelas despejadas
@@ -125,7 +150,7 @@ ALTER TABLE `funcionario`
 -- AUTO_INCREMENT de tabela `adocao`
 --
 ALTER TABLE `adocao`
-  MODIFY `idadocao` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idadocao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `animal`
@@ -137,13 +162,13 @@ ALTER TABLE `animal`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para tabelas despejadas

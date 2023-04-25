@@ -4,12 +4,15 @@
  */
 package dao;
 
+import classe.Animal;
 import classe.Funcionario;
-import com.mysql.jdbc.Connection;
+import java.sql.Connection;
 import conexao.Conexao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,6 +24,8 @@ public class FuncionarioDao {
     private ResultSet rs;
     
     
+    
+    
     public FuncionarioDao(){
         this.con =  (Connection) new Conexao().getConnection();
     }
@@ -28,7 +33,7 @@ public class FuncionarioDao {
     public void insetFuncionario(Funcionario funcionario) throws SQLException{
         
         try{
-            PreparedStatement stmt = con.prepareStatement("insert into funcionario(nome,cargo,cpf,endereco,usuario,senha)values(?,?,?,?,?,?)");
+            PreparedStatement stmt = con.prepareStatement("insert into funcionario(nome,cargo,cpf,endereco,usuario,senha,status)values(?,?,?,?,?,?,?)");
             
             stmt.setString(1, funcionario.getNome());
             stmt.setString(2, funcionario.getCargo());
@@ -36,6 +41,7 @@ public class FuncionarioDao {
             stmt.setString(4, funcionario.getEndereco());
             stmt.setString(5, funcionario.getUsuario());
             stmt.setString(6, funcionario.getSenha());
+            stmt.setString(7,funcionario.getStatus());
             stmt.execute();
             
             JOptionPane.showMessageDialog(null, "Funcionario Cadastrado No Sistema");
@@ -48,11 +54,11 @@ public class FuncionarioDao {
         
     }
     
-    public void buscarFuncionario(Funcionario funcionario){
+    public void buscarFuncionario(Funcionario funcionario){ //Referente ao idfuncionario
             
             try{
                 PreparedStatement stmt = con.prepareStatement
-                ("select * from funcionario where nome = '"+funcionario.getNome()+"'");
+                ("select * from funcionario where nome = '"+funcionario.getNome()+"' and status ='A'");
                  rs = stmt.executeQuery();
                  
                  if(rs.next()){
@@ -70,4 +76,43 @@ public class FuncionarioDao {
               throw new RuntimeException(erro);
           } 
         }
+    
+    
+    public List<Funcionario> BuscaFuncionarios(){
+        
+        try{
+            
+            List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+            PreparedStatement stmt = con.prepareStatement("select * from funcionario where status = 'A'");
+            
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+               
+              Funcionario funcionario = new Funcionario();
+              
+              funcionario.setIdfuncionario(rs.getInt("idfuncionario"));
+              funcionario.setNome(rs.getString("nome"));
+              funcionario.setCargo(rs.getString("cargo"));
+              funcionario.setCpf(rs.getString("cpf"));
+              funcionario.setEndereco(rs.getString("endereco"));
+              funcionario.setUsuario(rs.getString("usuario"));
+              funcionario.setSenha(rs.getString("senha"));
+              funcionarios.add(funcionario);
+                
+            }
+            
+            return funcionarios;
+                        
+        }
+        
+        catch(SQLException erro){
+            
+            throw new RuntimeException(erro);
+        }
+        
+        
+        
+    }
+    
 }
