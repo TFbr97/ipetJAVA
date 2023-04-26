@@ -93,107 +93,113 @@ public class FrFuncionario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(200, 162, 200));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(txtsenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 580, 260, 50));
-        jPanel1.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 520, 260, 50));
-        jPanel1.add(txten, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 460, 260, 50));
+        jPanel1.add(txtsenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 420, 260, 30));
+        jPanel1.add(txtuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 260, 30));
+        jPanel1.add(txten, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 320, 260, 30));
 
         txtfuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtfuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(txtfuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 210, 130, 50));
+        jPanel1.add(txtfuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 100, 40));
 
-        btnbuscar.setText("Buscar");
+        btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/images_1.jpg"))); // NOI18N
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnbuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 280, 70, 50));
-        jPanel1.add(txtnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 260, 50));
+        jPanel1.add(btnbuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 40, 30));
+        jPanel1.add(txtnome, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 260, 30));
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nome");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Cargo");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 360, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("CPF");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Endereço");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Senha");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 590, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("ID");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, -1, -1));
-        jPanel1.add(txtcpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 400, 260, 50));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+        jPanel1.add(txtcpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 260, 30));
 
         btnsalvar.setBackground(new java.awt.Color(153, 255, 102));
         btnsalvar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnsalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/adicionar-usuario (1).png"))); // NOI18N
         btnsalvar.setText("Salvar");
         btnsalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnsalvarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnsalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 700, 80, 40));
+        jPanel1.add(btnsalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 510, 120, 40));
 
         btnlimpar.setBackground(new java.awt.Color(255, 255, 153));
         btnlimpar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnlimpar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/Gnome-Edit-Clear-32.png"))); // NOI18N
         btnlimpar.setText("Limpar");
         btnlimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnlimparActionPerformed(evt);
             }
         });
-        jPanel1.add(btnlimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 700, 80, 40));
+        jPanel1.add(btnlimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 510, 130, 40));
 
         btnex.setBackground(new java.awt.Color(255, 102, 102));
         btnex.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnex.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/deletar-usuario (1).png"))); // NOI18N
         btnex.setText("Excluir");
-        jPanel1.add(btnex, new org.netbeans.lib.awtextra.AbsoluteConstraints(752, 700, 80, 40));
+        btnex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnexActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnex, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 510, 120, 40));
 
         txtcargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcargoActionPerformed(evt);
             }
         });
-        jPanel1.add(txtcargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 340, 260, 50));
+        jPanel1.add(txtcargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 260, 30));
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 48)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Cadastro de Funcionario");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
 
-        jLabel9.setBackground(new java.awt.Color(51, 51, 51));
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Agenda-PainelFundo.png"))); // NOI18N
-        jLabel9.setText("jLabel1");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 1270, 910));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo_2.PNG"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, 470, 210));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1360, 1000));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 710));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -225,6 +231,13 @@ public class FrFuncionario extends javax.swing.JFrame {
     private void btnlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnlimparActionPerformed
         Limpar();
     }//GEN-LAST:event_btnlimparActionPerformed
+
+    private void btnexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexActionPerformed
+        funcionario.setStatus("I");
+        funcionarioD.inativar(funcionario);
+        Limpar();
+        
+    }//GEN-LAST:event_btnexActionPerformed
 
     /**
      * @param args the command line arguments

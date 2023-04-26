@@ -115,4 +115,19 @@ public class FuncionarioDao {
         
     }
     
+    public void inativar(Funcionario funcionario){
+        try{
+            PreparedStatement stmt = con.prepareStatement("update funcionario set status=? where idfuncionario ='"+funcionario.getIdfuncionario()+"'");
+            stmt.setString(1, funcionario.getStatus());
+             
+             stmt.executeUpdate();
+             JOptionPane.showMessageDialog(null, "Funcionario inativo!");
+             
+            con.close();
+        }
+        catch(SQLException erro){
+            throw new RuntimeException(erro);
+        }
+    }
+    
 }
