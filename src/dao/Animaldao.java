@@ -34,7 +34,7 @@ public class AnimalDao {
         
         try{
             PreparedStatement stmt = con.prepareStatement
-        ("insert into animal(nome,idade,sexo,raca,status,descricao)values(?,?,?,?,?,?)");
+        ("insert into animal(nome,idade,sexo,raca,status,descricao,idfuncionario)values(?,?,?,?,?,?,?)");
             
             stmt.setString(1, animal.getNome());
             stmt.setString(2, animal.getIdade());
@@ -42,6 +42,7 @@ public class AnimalDao {
             stmt.setString(4, animal.getRaca());
             stmt.setString(5, animal.getStatus());
             stmt.setString(6, animal.getDescricao());
+            stmt.setInt(7,animal.getIdfuncionario());
             stmt.execute();
             JOptionPane.showMessageDialog(null, "Animal cadastrado no sistema");
             
@@ -54,6 +55,25 @@ public class AnimalDao {
         }
         
     }
+    
+    public void inativoAnimal(Animal animal){
+        
+        try{
+            PreparedStatement stmt = con.prepareStatement("update animal set status = ? where idanimal='"+animal.getIdanimal()+"'");
+            
+            stmt.setString(1, animal.getStatus());
+            stmt.executeUpdate();
+            JOptionPane.showMessageDialog(null,"Animal Adotado"); 
+            //con.close();
+            
+        }
+        catch(SQLException erro){
+            
+            throw new RuntimeException(erro); 
+        } 
+        
+    }
+    
     
     public void Buscaid(Animal animal){
         
@@ -72,6 +92,7 @@ public class AnimalDao {
                 animal.setSexo(rs.getString("sexo"));
                 animal.setRaca(rs.getString("raca"));
                 animal.setDescricao(rs.getString("descricao"));
+                animal.setIdfuncionario(rs.getInt("idfuncionario"));
                 
                 
                 
@@ -101,6 +122,7 @@ public class AnimalDao {
             rs = stmt.executeQuery(); 
             
             if(rs.next()){ 
+                
                 animal.setIdanimal(rs.getInt("idanimal")); 
                 animal.setNome(rs.getString("nome"));
                 animal.setIdade(rs.getString("idade"));
@@ -108,6 +130,8 @@ public class AnimalDao {
                 animal.setRaca(rs.getString("raca"));
                 animal.setStatus(rs.getString("status"));
                 animal.setDescricao(rs.getString("descricao"));
+                animal.setIdfuncionario(rs.getInt("idfuncionario"));
+                
             }
             
             else{
@@ -143,6 +167,7 @@ public class AnimalDao {
               animal.setSexo(rs.getString("sexo"));
               animal.setRaca(rs.getString("raca"));
               animal.setDescricao(rs.getString("descricao"));
+              animal.setIdfuncionario(rs.getInt("funcionario"));
               animais.add(animal);
                 
             }

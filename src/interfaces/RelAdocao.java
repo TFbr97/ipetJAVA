@@ -84,6 +84,7 @@ public class RelAdocao extends javax.swing.JFrame {
        animal.setNome(String.valueOf(cbanimal.getSelectedItem()));
        adao.Buscanome(animal);
        adocao.setIdanimal(animal.getIdanimal()); 
+
         
        //Cliente 
        cliente.setNome(String.valueOf(cbcliente.getSelectedItem()));

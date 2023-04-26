@@ -5,7 +5,10 @@
 package interfaces;
 
 import classe.Animal;
+import classe.Funcionario;
 import dao.AnimalDao;
+import java.util.List;
+import dao.FuncionarioDao;
 
 
 
@@ -14,12 +17,15 @@ public class FrAnimal extends javax.swing.JFrame {
 
     Animal animal = new Animal();
     AnimalDao dao = new AnimalDao();
+    Funcionario funcionario = new Funcionario();
+    FuncionarioDao fdao = new FuncionarioDao();
 
     
     
     public FrAnimal() {
         
         initComponents();
+        preenchecombo();
         
     }
     
@@ -33,6 +39,9 @@ public class FrAnimal extends javax.swing.JFrame {
         animal.setRaca(txraca.getText());
         animal.setDescricao(txdescricao.getText());
         animal.setStatus("P");
+        funcionario.setNome(String.valueOf(cbfuncionario.getSelectedItem()));
+        fdao.buscarFuncionario(funcionario);
+        animal.setIdfuncionario(funcionario.getIdfuncionario());
         
     }
     
@@ -58,6 +67,18 @@ public class FrAnimal extends javax.swing.JFrame {
         
     }
     
+    private void preenchecombo(){
+        
+        List<Funcionario> funcionarios = fdao.BuscaVet(funcionario);
+            
+            for(Funcionario funcionario : funcionarios){
+                
+                cbfuncionario.addItem(funcionario.getNome());
+                
+            }
+        
+    }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -75,11 +96,14 @@ public class FrAnimal extends javax.swing.JFrame {
         txsexo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         txraca = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        cbfuncionario = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txdescricao = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         btsalvar = new javax.swing.JButton();
+        btlimpar1 = new javax.swing.JButton();
         btlimpar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -155,8 +179,8 @@ public class FrAnimal extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Raça:");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+        jLabel10.setText("Veterinario:");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
 
         txraca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,16 +189,29 @@ public class FrAnimal extends javax.swing.JFrame {
         });
         getContentPane().add(txraca, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 280, 30));
 
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Raça:");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 310, -1, -1));
+
+        cbfuncionario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o veterinário" }));
+        cbfuncionario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbfuncionarioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbfuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 280, 30));
+
         jLabel11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Descrição:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, -1, -1));
 
         txdescricao.setColumns(20);
         txdescricao.setRows(5);
         jScrollPane1.setViewportView(txdescricao);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 280, 60));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 410, 280, 60));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -191,7 +228,18 @@ public class FrAnimal extends javax.swing.JFrame {
                 btsalvarActionPerformed(evt);
             }
         });
-        getContentPane().add(btsalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 430, 140, 40));
+        getContentPane().add(btsalvar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 140, 40));
+
+        btlimpar1.setBackground(new java.awt.Color(255, 0, 0));
+        btlimpar1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btlimpar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/deletar-usuario (1).png"))); // NOI18N
+        btlimpar1.setText("Limpar");
+        btlimpar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btlimpar1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btlimpar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 480, 140, 40));
 
         btlimpar.setBackground(new java.awt.Color(255, 255, 153));
         btlimpar.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
@@ -202,7 +250,7 @@ public class FrAnimal extends javax.swing.JFrame {
                 btlimparActionPerformed(evt);
             }
         });
-        getContentPane().add(btlimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 430, 140, 40));
+        getContentPane().add(btlimpar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 480, 140, 40));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo_2.PNG"))); // NOI18N
@@ -260,6 +308,18 @@ public class FrAnimal extends javax.swing.JFrame {
         Limpar();
     }//GEN-LAST:event_btlimparActionPerformed
 
+    private void btlimpar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimpar1ActionPerformed
+       
+        animal.setStatus("A");
+        dao.inativoAnimal(animal);
+        Limpar();
+        
+    }//GEN-LAST:event_btlimpar1ActionPerformed
+
+    private void cbfuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbfuncionarioActionPerformed
+       
+    }//GEN-LAST:event_cbfuncionarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,9 +359,12 @@ public class FrAnimal extends javax.swing.JFrame {
     private javax.swing.JButton btbuscarid;
     private javax.swing.JButton btbuscarnome;
     private javax.swing.JButton btlimpar;
+    private javax.swing.JButton btlimpar1;
     private javax.swing.JButton btsalvar;
+    private javax.swing.JComboBox<String> cbfuncionario;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

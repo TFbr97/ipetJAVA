@@ -4,7 +4,6 @@
  */
 package dao;
 
-import classe.Animal;
 import classe.Funcionario;
 import java.sql.Connection;
 import conexao.Conexao;
@@ -115,19 +114,42 @@ public class FuncionarioDao {
         
     }
     
-    public void inativar(Funcionario funcionario){
+    
+        public List<Funcionario> BuscaVet(Funcionario f){
+        
         try{
-            PreparedStatement stmt = con.prepareStatement("update funcionario set status=? where idfuncionario ='"+funcionario.getIdfuncionario()+"'");
-            stmt.setString(1, funcionario.getStatus());
-             
-             stmt.executeUpdate();
-             JOptionPane.showMessageDialog(null, "Funcionario inativo!");
-             
-            con.close();
+            
+            List<Funcionario> funcionarios = new ArrayList<Funcionario>();
+            PreparedStatement stmt = con.prepareStatement("select * from funcionario where status = 'A' and cargo = 'Veterinário'");
+            
+            rs = stmt.executeQuery();
+            
+            while (rs.next()) {
+               
+              Funcionario funcionario = new Funcionario();
+              
+              funcionario.setIdfuncionario(rs.getInt("idfuncionario"));
+              funcionario.setNome(rs.getString("nome"));
+              funcionario.setCargo(rs.getString("cargo"));
+              funcionario.setCpf(rs.getString("cpf"));
+              funcionario.setEndereco(rs.getString("endereco"));
+              funcionario.setUsuario(rs.getString("usuario"));
+              funcionario.setSenha(rs.getString("senha"));
+              funcionarios.add(funcionario);
+                
+            }
+            
+            return funcionarios;
+                        
         }
+        
         catch(SQLException erro){
+            
             throw new RuntimeException(erro);
         }
+        
+        
+        
     }
     
 }

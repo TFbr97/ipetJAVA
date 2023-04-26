@@ -16,6 +16,7 @@ public class Animal {
     private String raca;
     private String status;
     private String descricao;
+    private int idfuncionario;
 
     
 
@@ -76,6 +77,14 @@ public class Animal {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+    
+    public int getIdfuncionario() {
+        return idfuncionario;
+    }
+
+    public void setIdfuncionario(int idfuncionario) {
+        this.idfuncionario = idfuncionario;
     }
     
     
