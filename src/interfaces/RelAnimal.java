@@ -32,6 +32,7 @@ public class RelAnimal extends javax.swing.JFrame {
         tbanimal.getColumnModel().getColumn(3).setPreferredWidth(100);
         tbanimal.getColumnModel().getColumn(4).setPreferredWidth(100);
         tbanimal.getColumnModel().getColumn(5).setPreferredWidth(150);
+        tbanimal.getColumnModel().getColumn(0).setPreferredWidth(30);
         
         DefaultTableModel modelo = (DefaultTableModel)tbanimal.getModel();
             modelo.setNumRows(0);
@@ -49,7 +50,8 @@ public class RelAnimal extends javax.swing.JFrame {
                     animal.getIdade(),
                     animal.getSexo(),
                     animal.getRaca(),
-                    animal.getDescricao()
+                    animal.getDescricao(),
+                    animal.getIdfuncionario()
                 
                 });
                 
@@ -82,13 +84,13 @@ public class RelAnimal extends javax.swing.JFrame {
 
         tbanimal.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "IdAnimal", "Nome", "Idade", "Sexo", "Raça", "Descrição"
+                "IdAnimal", "Nome", "Idade", "Sexo", "Raça", "Descrição", "IdFuncionario"
             }
         ));
         tbanimal.setGridColor(new java.awt.Color(153, 204, 255));
@@ -96,12 +98,14 @@ public class RelAnimal extends javax.swing.JFrame {
         tbanimal.setSelectionBackground(new java.awt.Color(153, 255, 255));
         jScrollPane1.setViewportView(tbanimal);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 790, 330));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 790, 330));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/Logo_2.PNG"))); // NOI18N
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 700));
+        jLabel1.setMaximumSize(new java.awt.Dimension(0, 0));
+        jLabel1.setMinimumSize(new java.awt.Dimension(970, 700));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 980, 630));
 
         jPanel1.setBackground(new java.awt.Color(200, 162, 200));
 
@@ -114,7 +118,7 @@ public class RelAnimal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(263, Short.MAX_VALUE)
+                .addContainerGap(293, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(232, 232, 232))
         );
@@ -123,10 +127,10 @@ public class RelAnimal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jLabel2)
-                .addContainerGap(633, Short.MAX_VALUE))
+                .addContainerGap(643, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 710));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1000, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

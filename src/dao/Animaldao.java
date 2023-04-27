@@ -167,7 +167,7 @@ public class AnimalDao {
               animal.setSexo(rs.getString("sexo"));
               animal.setRaca(rs.getString("raca"));
               animal.setDescricao(rs.getString("descricao"));
-              animal.setIdfuncionario(rs.getInt("funcionario"));
+              animal.setIdfuncionario(rs.getInt("idfuncionario"));
               animais.add(animal);
                 
             }
