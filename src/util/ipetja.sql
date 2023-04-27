@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 22/04/2023 às 01:41
--- Versão do servidor: 10.4.28-MariaDB
--- Versão do PHP: 8.2.4
+-- Tempo de geração: 28-Abr-2023 às 00:21
+-- Versão do servidor: 10.4.27-MariaDB
+-- versão do PHP: 8.0.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `adocao`
+-- Estrutura da tabela `adocao`
 --
 
 CREATE TABLE `adocao` (
@@ -35,17 +35,10 @@ CREATE TABLE `adocao` (
   `data` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `adocao`
---
-
-INSERT INTO `adocao` (`idadocao`, `idanimal`, `idcliente`, `idfuncionario`, `data`) VALUES
-(4, 1, 1, 1, '2023-04-21');
-
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `animal`
+-- Estrutura da tabela `animal`
 --
 
 CREATE TABLE `animal` (
@@ -55,20 +48,21 @@ CREATE TABLE `animal` (
   `sexo` varchar(25) NOT NULL,
   `raca` varchar(25) NOT NULL,
   `status` char(1) NOT NULL,
-  `descricao` varchar(500) NOT NULL
+  `descricao` varchar(500) NOT NULL,
+  `idfuncionario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `animal`
+-- Extraindo dados da tabela `animal`
 --
 
-INSERT INTO `animal` (`idanimal`, `nome`, `idade`, `sexo`, `raca`, `status`, `descricao`) VALUES
-(1, 'Ronaldo', '2 anos', 'Masculino', 'Bulldog', 'P', '');
+INSERT INTO `animal` (`idanimal`, `nome`, `idade`, `sexo`, `raca`, `status`, `descricao`, `idfuncionario`) VALUES
+(4, 'Steel', '1 ano', 'Macho', 'Calopisita', 'P', 'adsklfjhaskjldfhgasdkfljhasdfkljhsdfgç', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cliente`
+-- Estrutura da tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
@@ -79,17 +73,10 @@ CREATE TABLE `cliente` (
   `telefone` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `cliente`
---
-
-INSERT INTO `cliente` (`idcliente`, `nome`, `cpf`, `endereco`, `telefone`) VALUES
-(1, 'Rodrigo', '12345678952', 'Rua taltal n° 19', '12345687988');
-
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `funcionario`
+-- Estrutura da tabela `funcionario`
 --
 
 CREATE TABLE `funcionario` (
@@ -104,19 +91,19 @@ CREATE TABLE `funcionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Despejando dados para a tabela `funcionario`
+-- Extraindo dados da tabela `funcionario`
 --
 
 INSERT INTO `funcionario` (`idfuncionario`, `nome`, `cargo`, `cpf`, `endereco`, `usuario`, `senha`, `status`) VALUES
-(1, 'Gustavo', '', '12345678912', 'asdkljfhasfdjk', 'vasco', 'vasco', 'A'),
-(2, 'Tiago', '', '12345678912', 'rua ajsdasçdl', 'tiago', '123', 'A');
+(3, 'Gustavo', 'Veterinário', '12345678912', 'adssfafasf', 'gus', '123', 'A'),
+(4, 'Tiago', 'Administrador', '12365478912', 'asdfasfasgfagfagf', 'tiago', '123', 'A');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices de tabela `adocao`
+-- Índices para tabela `adocao`
 --
 ALTER TABLE `adocao`
   ADD PRIMARY KEY (`idadocao`),
@@ -125,62 +112,69 @@ ALTER TABLE `adocao`
   ADD KEY `idfuncionario` (`idfuncionario`);
 
 --
--- Índices de tabela `animal`
+-- Índices para tabela `animal`
 --
 ALTER TABLE `animal`
-  ADD PRIMARY KEY (`idanimal`);
+  ADD PRIMARY KEY (`idanimal`),
+  ADD KEY `idfuncionario` (`idfuncionario`);
 
 --
--- Índices de tabela `cliente`
+-- Índices para tabela `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`idcliente`);
 
 --
--- Índices de tabela `funcionario`
+-- Índices para tabela `funcionario`
 --
 ALTER TABLE `funcionario`
   ADD PRIMARY KEY (`idfuncionario`);
 
 --
--- AUTO_INCREMENT para tabelas despejadas
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
 -- AUTO_INCREMENT de tabela `adocao`
 --
 ALTER TABLE `adocao`
-  MODIFY `idadocao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idadocao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `idanimal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idanimal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idcliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idfuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Restrições para tabelas despejadas
+-- Restrições para despejos de tabelas
 --
 
 --
--- Restrições para tabelas `adocao`
+-- Limitadores para a tabela `adocao`
 --
 ALTER TABLE `adocao`
   ADD CONSTRAINT `adocao_ibfk_1` FOREIGN KEY (`idanimal`) REFERENCES `animal` (`idanimal`),
   ADD CONSTRAINT `adocao_ibfk_2` FOREIGN KEY (`idcliente`) REFERENCES `cliente` (`idcliente`),
   ADD CONSTRAINT `adocao_ibfk_3` FOREIGN KEY (`idfuncionario`) REFERENCES `funcionario` (`idfuncionario`);
+
+--
+-- Limitadores para a tabela `animal`
+--
+ALTER TABLE `animal`
+  ADD CONSTRAINT `animal_ibfk_1` FOREIGN KEY (`idfuncionario`) REFERENCES `funcionario` (`idfuncionario`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
