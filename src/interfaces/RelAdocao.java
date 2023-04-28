@@ -42,6 +42,7 @@ public class RelAdocao extends javax.swing.JFrame {
     public RelAdocao() {
         initComponents();
         ptabela.setVisible(false);
+        btatualiza.setVisible(false);
         mostratabela();
         txdata.setText(new SimpleDateFormat("dd/MM/yyyy").format(new Date(System.currentTimeMillis())));
         preenchecombo();
@@ -169,6 +170,7 @@ public class RelAdocao extends javax.swing.JFrame {
         cbfuncionario = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         txdata = new javax.swing.JFormattedTextField();
+        btatualiza = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         btguarda = new javax.swing.JButton();
         ptabela = new javax.swing.JPanel();
@@ -225,6 +227,15 @@ public class RelAdocao extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         getContentPane().add(txdata, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 270, 80, 30));
+
+        btatualiza.setBackground(new java.awt.Color(204, 204, 204));
+        btatualiza.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/atualizar.png"))); // NOI18N
+        btatualiza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btatualizaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btatualiza, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 320, -1, 30));
 
         jPanel1.setBackground(new java.awt.Color(200, 162, 200));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -286,8 +297,15 @@ public class RelAdocao extends javax.swing.JFrame {
         passadados();
         adocaodao.insertAdocao(adocao);
         ptabela.setVisible(true);
+        btatualiza.setVisible(true);
         
     }//GEN-LAST:event_btguardaActionPerformed
+
+    private void btatualizaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btatualizaActionPerformed
+        
+        mostratabela();
+        
+    }//GEN-LAST:event_btatualizaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -327,6 +345,7 @@ public class RelAdocao extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btatualiza;
     private javax.swing.JButton btguarda;
     private javax.swing.JComboBox<String> cbanimal;
     private javax.swing.JComboBox<String> cbcliente;

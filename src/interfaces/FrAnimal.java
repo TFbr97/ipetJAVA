@@ -233,7 +233,7 @@ public class FrAnimal extends javax.swing.JFrame {
         btlimpar1.setBackground(new java.awt.Color(255, 0, 0));
         btlimpar1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         btlimpar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/deletar-usuario (1).png"))); // NOI18N
-        btlimpar1.setText("Limpar");
+        btlimpar1.setText("Adotado");
         btlimpar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btlimpar1ActionPerformed(evt);
