@@ -36,10 +36,11 @@ public class LoginDao {
         try{
             
             PreparedStatement stmt = con.prepareStatement
-        ("select * from funcionario where usuario='"+funcionario.getUsuario()+"'"+"and senha ='"+funcionario.getSenha()+"'");
+        ("select nome, usuario, senha from funcionario where usuario='"+funcionario.getUsuario()+"'"+"and senha ='"+funcionario.getSenha()+"'");
             rs = stmt.executeQuery();
             if(rs.next()){
             
+            funcionario.setNome(rs.getString("nome"));
             funcionario.setUsuario(rs.getString("usuario"));
             funcionario.setSenha(rs.getString("senha"));
             
