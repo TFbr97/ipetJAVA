@@ -9,6 +9,7 @@ import dao.FuncionarioDao;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 
 
@@ -104,7 +105,7 @@ public class FrFuncionario extends javax.swing.JFrame {
                 txtfuncionarioActionPerformed(evt);
             }
         });
-        jPanel1.add(txtfuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 100, 40));
+        jPanel1.add(txtfuncionario, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 110, 100, 30));
 
         btnbuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons/images_1.jpg"))); // NOI18N
         btnbuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -117,38 +118,38 @@ public class FrFuncionario extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Nome");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 170, -1, -1));
+        jLabel1.setText("Nome:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Cargo");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 220, -1, -1));
+        jLabel2.setText("Cargo:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("CPF");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, -1, -1));
+        jLabel3.setText("CPF:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 270, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Endereço");
+        jLabel4.setText("Endereço:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 320, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Usuario");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, -1, -1));
+        jLabel5.setText("Usuario:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Senha");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, -1));
+        jLabel6.setText("Senha:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 420, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("ID");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, -1, -1));
+        jLabel7.setText("ID:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
         jPanel1.add(txtcpf, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 260, 30));
 
         btnsalvar.setBackground(new java.awt.Color(153, 255, 102));
@@ -213,12 +214,20 @@ public class FrFuncionario extends javax.swing.JFrame {
     }//GEN-LAST:event_txtcargoActionPerformed
 
     private void btnsalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsalvarActionPerformed
+        
+      if(txtnome.getText().length() > 0 && txtcargo.getText().length() > 0 && txtcpf.getText().length() > 0 && txten.getText().length() > 0 && txtuser.getText().length() > 0 && txtsenha.getText().length() > 0){
+        
         Passadados();
         try {
             funcionarioD.insetFuncionario(funcionario);
         } catch (SQLException ex) {
             Logger.getLogger(FrFuncionario.class.getName()).log(Level.SEVERE, null, ex);
         }
+      }
+      
+      else{
+          JOptionPane.showMessageDialog(null, "Preencha todos os campos, menos ID!");
+      }
     }//GEN-LAST:event_btnsalvarActionPerformed
 
     private void btnbuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnbuscarActionPerformed

@@ -9,6 +9,7 @@ import classe.Funcionario;
 import dao.AnimalDao;
 import java.util.List;
 import dao.FuncionarioDao;
+import javax.swing.JOptionPane;
 
 
 
@@ -297,10 +298,18 @@ public class FrAnimal extends javax.swing.JFrame {
 
     private void btsalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btsalvarActionPerformed
         
-        Passadados();
-        dao.insertAnimal(animal);
-        Limpar();
-
+        if(txnome.getText().length() > 0 && txidade.getText().length() > 0 && txraca.getText().length() > 0 && txsexo.getText().length() > 0 && txdescricao.getText().length() > 0){
+        
+            Passadados();
+            dao.insertAnimal(animal);
+            Limpar();
+        }
+        
+        else{
+            
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos, menos ID!");
+            
+        }
     }//GEN-LAST:event_btsalvarActionPerformed
 
     private void btlimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btlimparActionPerformed
